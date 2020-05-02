@@ -103,8 +103,12 @@
               "**/node_modules/**"
             ]
           }
-        }å
+        }
       }
-    }},
-  "defaultProject": "top-secret-agents"
+    }
+  },
+  "defaultProject": "top-secret-agents",
+  "cli": {
+    "analytics": "99548231-2913-4398-98f7-2be5f7ccbf31"
+  }
 }

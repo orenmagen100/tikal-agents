@@ -15,7 +15,7 @@ app.components.spec.ts contains simple tests to check the code. you can run it b
 
 ## install and run
 
-to start, clone the project and run 
+to start, clone the project, enter tikal-agents folder and run 
 `npm install`
 then
 `npm start` which will run ng start with the proxy config
