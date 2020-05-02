@@ -1,6 +1,6 @@
 # Top Secret Agents Project / Oren Magen
 
-# Info
+## General Info
 I've created a single app.component which contains the logic go the task, separated to small functions units.
 I've used Angular, Typescript, Rxjs and Bing maps for the tasks (Since google maps apparently doesn't have a free plan for generating keys anymore... ) 
 "consts.ts" file contains the task array from the question.
@@ -12,10 +12,9 @@ The table is displayed as expected, calculating the results as expected.
 app.components.spec.ts contains simple tests to check the code. you can run it by:
 `npm test`
 
+## Install and run
 
-## install and run
-
-to start, clone the project, enter tikal-agents folder and run 
+To start, clone the project, enter tikal-agents folder and run 
 `npm install`
 then
 `npm start` which will run ng start with the proxy config
