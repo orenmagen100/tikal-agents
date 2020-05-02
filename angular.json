@@ -103,19 +103,7 @@
               "**/node_modules/**"
             ]
           }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "top-secret-agents:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "top-secret-agents:serve:production"
-            }
-          }
-        }
+        }å
       }
     }},
   "defaultProject": "top-secret-agents"

@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { forkJoin, Observable, of } from 'rxjs';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,7 +22,6 @@ export class AppComponent implements OnInit {
   maxAddress = '';
   bingBaseUrl = 'http://dev.virtualearth.net/REST/v1/Locations?query=';
   londonAddress = '10 Downing st. London';
-
 
   constructor(private http: HttpClient, private elRef: ElementRef) {}
 
@@ -147,5 +145,4 @@ export class AppComponent implements OnInit {
       this.minAddress = agent.address;
     }
   }
-
 }
