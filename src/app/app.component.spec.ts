@@ -1,12 +1,25 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AGENTS } from './consts';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ElementRef } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
+
+  class MockElementRef extends ElementRef {}
+  class HttpClientRef extends HttpClient {}
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      imports: [HttpClientTestingModule],
+      providers: [
+        { provide: ElementRef, useClass: MockElementRef },
+        // { provide: HttpClient, useClass: HttpClientRef }
+      ]
     }).compileComponents();
   }));
 
@@ -16,16 +29,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'top-secret-agents'`, () => {
+  it(`should return Morocco and 3 on getIsolatedCountry`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('top-secret-agents');
+    const agentsList = AGENTS;
+    expect(app.getIsolatedCountry(agentsList).name).toEqual('Morocco');
+    expect(app.getIsolatedCountry(agentsList).isolatedAgentsSet.size).toEqual(3);
   });
 
-  it('should render title', () => {
+  it(`should throw error on empty array`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('top-secret-agents app is running!');
+    const app = fixture.componentInstance;
+    expect( () => { app.getIsolatedCountry([]); } ).toThrow(new Error('empty agents array!'));
+
   });
 });

@@ -1,0 +1,10 @@
+{
+  "/posts": {
+    "target": "http://dev.virtualearth.net",
+    "secure": true,
+    "pathRewrite": {
+      "^/posts": ""
+    },
+    "changeOrigin": true
+  }
+}
